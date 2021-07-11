@@ -2,14 +2,14 @@ ispresent=0
 isabsent=1
 isparttime=2
 wageperhr=20
+for((i=0;i=20;i++))
+do
 num=$((RANDOM%3))
 case $num in
-	0) workinghr=8
-	   echo "Employee is present";;
-	1) workinghr=0
-	   echo "Employee is absent";;
-	2)workinghr=4
-	   echo "Employee is part time"
+	0) workinghr=8;;
+	1) workinghr=0;;
+	2) workinghr=4;;
 esac
-wage=$((workinghr*wageperhr))
-echo "wage is " $wage
+	wage=$((wage+(workinghr*wageperhr)))
+done
+echo "total month wage is " $wage
